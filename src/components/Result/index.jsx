@@ -1,4 +1,5 @@
 //vai ser dividido entre: IMC: 00 e Classificacao: XXXXXXXX
+import styles from './Result.module.css'
 const Result = ({iMC, calculado, abaixoPeso, pesoNormal, sobrepeso, obeso}) => {
     const classificacaoIMC = () => {
         if(abaixoPeso){
@@ -20,25 +21,31 @@ const Result = ({iMC, calculado, abaixoPeso, pesoNormal, sobrepeso, obeso}) => {
         } else if(sobrepeso){
             return 'Seu peso esta um pouco acima do padrao, uma breve dieta de cutting e treinos regulares provavelmente te levarao ao seu peso ideal'
         } else if(obeso){
-            return 'Seu peso esta longe do saudavel, eh recomendado visitar um nutricionista ou um medico para acompanhar seu tratamento, uma mera dieta de cutting com treinos regulares pode nao ser o bastante para o seu caso.'
+            return 'Seu peso esta longe do saudavel, é recomendado visitar um nutricionista ou um medico para acompanhar seu tratamento, uma mera dieta de cutting com treinos regulares pode nao ser o bastante para o seu caso.'
         }
     }
 
     return (
-        <>
-        <h2>O seu resultado eh: </h2>
-        {calculado?(
-            <>
-                <h3>sua classificacao eh:{classificacaoIMC()}</h3>
-                <h4>Seu IMC eh: {iMC}</h4>
-                <p>{textoClassificacao()}</p>
-            </>
-        ) : (
-            <>
-                <h3>Ainda precisa ser calculado</h3>
-            </>
-        )}
-        </>
+        <div className={styles.ResultComponent}>
+            <div className="container">
+                <div className={styles.actualResult}>
+                    <h2>O seu resultado é: </h2>
+                    {calculado?(
+                        <>
+                            <div className={styles.resultTitle}>
+                                <h3 className={styles.resultTitleElement}>sua classificacao é: <br />{classificacaoIMC()}</h3>
+                                <h3 className={styles.resultTitleElement}>Seu IMC é: <br /> {parseFloat(iMC.toFixed(2))}</h3>
+                            </div>
+                            <p className={styles.textoClassificacao}>{textoClassificacao()}</p>
+                        </>
+                    ) : (
+                        <>
+                            <h3>Ainda precisa ser calculado</h3>
+                        </>
+                    )}
+                </div>
+            </div>
+        </div>
     )
 }
 

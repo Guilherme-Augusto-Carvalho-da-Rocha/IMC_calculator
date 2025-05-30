@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+HTML{
+    background-color: var(--corDeFundoSecundaria);
+}
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+:root{
+    --corBordas: #30336b;
+    --corDeFundoPrimaria: #c7ecee;
+    --corDeFundoSecundaria: #dff9fb;
+    --corTexto: #30336b;
+    --corTextoFraco: #30336bb0;
+    --corInputs: #dff9fb;
+}
+
+@media (max-width: 1023px){
+    .container{
+        max-width: 90vw;
+    }
+}

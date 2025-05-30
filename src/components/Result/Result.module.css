@@ -1,0 +1,41 @@
+.ResultComponent{
+    background-color: var(--corDeFundoSecundaria);
+    text-align: center;
+}
+
+.actualResult{
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 2vh;
+    border: 1px solid var(--corBordas);
+    border-top: none;
+    color: var(--corTexto);
+}
+
+.resultTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.resultTitleElement{
+    width: 20vw;
+}
+
+.textoClassificacao{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    color: var(--corTextoFraco);
+}
+
+@media(max-width: 767px){
+    .resultTitle{
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5vh;
+    }
+    .resultTitleElement{
+        width: 80%;
+    }
+}
